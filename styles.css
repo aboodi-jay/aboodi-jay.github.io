@@ -98,3 +98,15 @@ footer {
     color: #fff;
     margin-top: 2rem;
 }
+@font-face {
+    font-family: 'Blender Pro';
+    src: url('fonts/BlenderPro-Medium.woff2') format('woff2'),
+         url('fonts/BlenderPro-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Blender Pro', sans-serif;
+}
+
