@@ -28,7 +28,8 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f9c74f; /* Accent color for logo */
+    /*color: #f9c74f; /* Accent color for logo */
+    color: #ffffff;
 }
 nav ul {
     list-style: none;
@@ -43,7 +44,8 @@ nav ul li a {
     transition: color 0.3s;
 }
 nav ul li a:hover {
-    color: #f9c74f; /* Accent color on hover */
+    /*color: #f9c74f; /* Accent color on hover */
+    color: #ffffff;
 }
 
 /* Hero Section */
@@ -70,7 +72,8 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #f9c74f; /* Accent color for headings */
+    /*color: #f9c74f; /* Accent color for headings */
+    color: #ffffff;
 }
 .post {
     background: #1f2937; /* Dark background for posts */
@@ -99,4 +102,14 @@ footer {
     color: #d1d5db; /* Light gray text */
     margin-top: 2rem;
 }
+@font-face {
+    font-family: 'Blender Pro';
+    src: url('fonts/BlenderPro-Medium.woff2') format('woff2'),
+         url('fonts/BlenderPro-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+body {
+    font-family: 'Blender Pro', sans-serif;
+}
