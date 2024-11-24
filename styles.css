@@ -28,8 +28,7 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    /*color: #f9c74f; /* Accent color for logo */
-    color: #ffffff;
+    color: #ffffff; /* Accent color for logo
 }
 nav ul {
     list-style: none;
@@ -44,8 +43,7 @@ nav ul li a {
     transition: color 0.3s;
 }
 nav ul li a:hover {
-    /*color: #f9c74f; /* Accent color on hover */
-    color: #ffffff;
+    color: #ffffff; /* Accent color on hover
 }
 
 /* Hero Section */
@@ -86,12 +84,13 @@ h2 {
     margin-bottom: 0.5rem;
 }
 .post a {
-    color: #f9c74f; /* Accent color for links */
+    color: #ffffff; /* Accent color for links */
     text-decoration: none;
     font-weight: bold;
 }
 .post a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline; if you want underline back, uncomment this */
+    color: #2285d5;
 }
 
 /* Footer styles */
