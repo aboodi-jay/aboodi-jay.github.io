@@ -86,12 +86,13 @@ h2 {
     margin-bottom: 0.5rem;
 }
 .post a {
-    color: #f9c74f; /* Accent color for links */
+    color: #ffffff; /* Accent color for links */
     text-decoration: none;
     font-weight: bold;
 }
 .post a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #2285d5;
 }
 
 /* Footer styles */
@@ -106,10 +107,19 @@ footer {
     font-family: 'Blender Pro';
     src: url('fonts/BlenderPro-Medium.woff2') format('woff2'),
          url('fonts/BlenderPro-Medium.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Blender Pro';
+    src: url('fonts/BlenderPro-Bold.woff2') format('woff2'),
+         url('fonts/BlenderPro-Bold.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
 }
 
 body {
     font-family: 'Blender Pro', sans-serif;
+    font-weight: 400;
 }
