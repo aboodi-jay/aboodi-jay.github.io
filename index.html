@@ -20,7 +20,7 @@
     </header>
     <main>
         <section id="hero">
-            <h1>WELCOME TO ABOODI'S VERY OWN BLOG</h1>
+            <h1 id="typewriter"></h1>
             <p>A Kingdom of Knowledge, Cybersecurity, and Chronicles.</p>
         </section>
         <section id="about">
@@ -50,4 +50,32 @@
         <p>&copy; 2024 Aboodi's Blog. All Rights Reserved.</p>
     </footer>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Text to be typed in the typewriter
+  const text = "WELCOME TO MY VERY OWN BLOG";
+  const typewriter = document.getElementById('typewriter');
+
+  // Clear any existing content
+  typewriter.textContent = "";
+
+  let index = 0;
+
+  // Function to handle the typing effect
+  function typeEffect() {
+    if (index < text.length) {
+      typewriter.textContent += text.charAt(index); // Add one character at a time
+      index++;
+      setTimeout(typeEffect, 100); // Adjust typing speed (100ms per character)
+    } else {
+      // Add blinking cursor class after typing is complete
+      typewriter.classList.add('blinking');
+    }
+  }
+
+  // Start typing effect
+  typeEffect();
+});
+
+  </script>
 </html>

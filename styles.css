@@ -41,11 +41,11 @@ nav ul li {
 nav ul li a {
     color: #f3f4f6; /* Light link color */
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.4s;
 }
 nav ul li a:hover {
     /*color: #f9c74f; /* Accent color on hover */
-    color: #ffffff;
+    color: #ba1a1a;
 }
 
 /* Hero Section */
@@ -88,6 +88,7 @@ h2 {
 .post a {
     color: #ffffff; /* Accent color for links */
     text-decoration: none;
+    transition: color 0.2s;
     font-weight: bold;
 }
 .post a:hover {
