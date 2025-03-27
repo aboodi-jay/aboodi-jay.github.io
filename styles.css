@@ -5,16 +5,16 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Blender Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     line-height: 1.6;
-    color: #d1d5db; /* Light gray text for dark backgrounds */
+    color: #d9d1db; /* Light gray text for dark backgrounds */ 
     background-color: #121212; /* Dark background */
 }
 
 /* Header styles */
 header {
     background: #1f2937; /* Darker header background */
-    color: #f3f4f6; /* Light text */
+    color: #f6f3f6; /* Light text */
     padding: 1rem 0;
 }
 nav {
@@ -29,17 +29,34 @@ nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
     /*color: #f9c74f; /* Accent color for logo */
-    color: #ffffff;
+    color: #33b8ff;
 }
+
+.logo {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the text color */
+    font-weight: bold;
+    transition: color 0.4s;
+}
+
+.logo:hover {
+    /*color: #f9c74f; /* Accent color on hover */
+    color: #ba1a1a;
+}
+
 nav ul {
+    font-size: 1.2rem;
     list-style: none;
     display: flex;
+    font-weight: normal;
 }
+
+
 nav ul li {
     margin-left: 1rem;
 }
 nav ul li a {
-    color: #f3f4f6; /* Light link color */
+    color: #33b8ff; /* Light link color */
     text-decoration: none;
     transition: color 0.4s;
 }
@@ -47,7 +64,6 @@ nav ul li a:hover {
     /*color: #f9c74f; /* Accent color on hover */
     color: #ba1a1a;
 }
-
 /* Hero Section */
 #hero {
     text-align: center;
@@ -105,22 +121,30 @@ footer {
     margin-top: 2rem;
 }
 @font-face {
-    font-family: 'Blender Pro';
-    src: url('fonts/BlenderPro-Medium.woff2') format('woff2'),
-         url('fonts/BlenderPro-Medium.woff') format('woff');
+    font-family: 'Jost';
+    src: url('fonts/Jost-Regular.ttf') format('truetype');
+         /* url('fonts/BlenderPro-Medium.woff') format('woff');*/
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Blender Pro';
-    src: url('fonts/BlenderPro-Bold.woff2') format('woff2'),
-         url('fonts/BlenderPro-Bold.woff') format('woff');
+    font-family: 'Jost';
+    src: url('fonts/Jost-Bold.ttf') format('truetype');
+         /* url('fonts/BlenderPro-Bold.woff') format('woff'); */
     font-weight: 700;
     font-style: normal;
 }
 
 body {
-    font-family: 'Blender Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.25rem;
     font-weight: 400;
 }
+
+
+body {
+    background-color: #282b4f; /* Dark background */
+}
+
+/* <div class="logo">ABOODI.SITE</div> */
