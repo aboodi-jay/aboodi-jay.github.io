@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide to installing DVWA using XAMPP and reading its logs with Wazuh - A cybersecurity post on Aboodi's Blog.">
+    <title>Aboodi's Blog</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Jost', sans-serif;
+            line-height: 1.6;
+            color: #d9d1db; /* Light gray text for dark backgrounds */
+            background-color: #282b4f; /* Dark background */
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        /* Header styles */
+        header {
+            background: #1f2937; /* Darker header background */
+            color: #f6f3f6; /* Light text */
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #33b8ff; /* Accent color for logo */
+            text-decoration: none;
+            transition: color 0.4s;
+        }
+        nav .logo:hover {
+            color: #ba1a1a; /* Accent color on hover */
+        }
+        nav ul {
+            font-size: 1.2rem;
+            list-style: none;
+            display: flex;
+            font-weight: normal;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            color: #33b8ff; /* Light link color */
+            text-decoration: none;
+            transition: color 0.4s;
+        }
+        nav ul li a:hover {
+            color: #ba1a1a; /* Accent color on hover */
+        }
+
+        /* Blog post styles */
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff; /* White for headings */
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.75rem;
+            margin: 1.5rem 0 1rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .blog-meta {
+            font-size: 1rem;
+            color: #d1d5db; /* Light gray for meta text */
+            margin-bottom: 1.5rem;
+        }
+        .blog-content {
+            background: #1f2937; /* Dark background for posts */
+            padding: 1.5rem;
+            border: 1px solid #374151; /* Subtle border */
+            border-radius: 5px;
+        }
+        .blog-content p {
+            margin-bottom: 1rem;
+        }
+        .blog-content a {
+            color: #33b8ff; /* Accent color for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .blog-content a:hover {
+            color: #ba1a1a; /* Hover color */
+        }
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem auto;
+            border-radius: 5px;
+            display: block;
+        }
+        .blog-content code {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e; /* Darker background for code */
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        .blog-content pre {
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .blog-content pre code {
+            padding: 0;
+        }
+        .blog-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1f2937; /* Dark footer background */
+            color: #d1d5db; /* Light gray text */
+            margin-top: 2rem;
+        }
+
+        /* Font definitions */
+        @font-face {
+            font-family: 'Jost';
+            src: url('/fonts/Jost-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Jost';
+            src: url('/fonts/Jost-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ABOODI.SITE</a>
+            <ul>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/posts.html">Posts</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Wazuh Configuration and Threat Detection Testing with DVWA</h1>
+            <p class="blog-meta">Posted by Abdullah (aka Aboodi) | April 20, 2025</p>
+            <div class="blog-content">
+                <p>Hey everybody, this is my first post on this website 👋🏻.</p>
+                    <p>In this post, I'll show you how to:</p>
+
+                    <p>👉🏻 Install the Damn Vulnerable Web Application (DVWA) using XAMPP on Windows, a popular setup for practicing web security skills...</p> 👉🏻 Set up Wazuh to monitor DVWA’s logs, helping you analyze potential attacks in a controlled environment</p>
+
+                <h2 id="what-is-dvwa">Before we get started.. what is DVWA?</h2>
+                <p>DVWA is a PHP/MySQL web application designed to be vulnerable. It’s a fantastic tool for security professionals, web developers, and students to practice identifying and exploiting common web vulnerabilities like SQL Injection and Cross-Site Scripting (XSS) in a legal, safe environment.</p>
+
+                <h2 id="installing-dvwa">1️⃣ Installing DVWA with XAMPP on Windows</h2>
+                <p>Let’s set up DVWA using XAMPP, a free and open-source web server solution that includes Apache, MariaDB, and PHP. Follow these steps:</p>
+                <ol>
+                    <li><strong>Download and Install XAMPP</strong>: Head to the <a href="https://www.apachefriends.org/download.html">official XAMPP website</a> and download the Windows installer.<img src = /media/wazuh-threat-detection-with-dvwa/XAMPP.png>  Run the installer, selecting Apache and MySQL as components along with phpMyAdmin ticked as well, and complete the setup. Once installed, open the XAMPP Control Panel and start the Apache and MySQL services.</li>
+                    <li><strong>Download DVWA</strong>: Visit the <a href="https://github.com/digininja/DVWA">official DVWA GitHub repository</a> and download the ZIP file by clicking the “Code” button and selecting “Download ZIP.”<img src = /media/wazuh-threat-detection-with-dvwa/dvwa-git-download.png> Extract the ZIP file to a folder named <code>dvwa</code>.</li>
+                    <li><strong>Move DVWA to XAMPP’s htdocs</strong>: Copy the extracted <code>dvwa</code> folder to XAMPP’s <code>htdocs</code> directory, typically located at <code>C:\xampp\htdocs\</code>.</li>
+                    <li><strong>Configure DVWA</strong>: Navigate to <code>C:\xampp\htdocs\dvwa\config</code>. You’ll find a file named <code>config.inc.php.dist</code>. Rename it to <code>config.inc.php</code>. Open the file in a text editor (e.g., Notepad) and locate the line with the database password. Since XAMPP’s default MySQL password is empty, set the password to blank by editing the line to: <code>$_DVWA['db_password'] = '';</code>. Save the file.</li>
+                    <li><strong>Access DVWA in Your Browser</strong>: Open your browser and navigate to <code>http://127.0.0.1/dvwa/</code>. You’ll see a setup page.<img src = "/media/wazuh-threat-detection-with-dvwa/dvwa-createdb.png"> Scroll down and click “Create / Reset Database” to initialize the DVWA database. After a moment, you’ll be redirected to the login page.</li>
+                    <li><strong>Log In to DVWA</strong>: Use the default credentials—username: <code>admin</code>, password: <code>password</code>. Once logged in, you can explore vulnerabilities like SQL Injection and XSS at different difficulty levels.</li>
+                </ol>
+
+                <h2 id="setting-up-wazuh">2️⃣ Setting Up Wazuh to Monitor DVWA Logs</h2>
+                <p>Wazuh is a powerful open-source security monitoring platform that can help you analyze logs for potential security events. Since DVWA runs on Apache (via XAMPP), we’ll configure Wazuh to monitor Apache’s access and error logs, which will include DVWA activity.</p>
+                <ol>
+                    <li><strong>Install Wazuh</strong>: Wazuh can be deployed in various ways, but for simplicity, I recommend using the pre-built Wazuh OVA (a virtual appliance). Download the latest Wazuh OVA from the <a href="https://wazuh.com">Wazuh website</a> and import it into a virtualization tool like VirtualBox. Follow the setup instructions to get the Wazuh manager running. Note the manager’s IP address (e.g., <code>192.168.1.100</code>).</li>
+                    <li><strong>Install the Wazuh Agent on Your Windows Machine</strong>: Download the Wazuh agent for Windows from the Wazuh website. Run the installer, and when prompted, enter the Wazuh manager’s IP address to connect the agent to the manager. Complete the installation and ensure the agent service is running.</li>
+                    <li><strong>Configure the Wazuh Agent to Monitor Apache Logs</strong>: On your Windows machine, locate the Wazuh agent configuration file at <code>C:\Program Files (x86)\ossec-agent\ossec.conf</code>. Open it in a text editor with administrator privileges. Add the following block to monitor Apache logs generated by XAMPP:
+                        <pre><code>&lt;localfile&gt;
+    &lt;log_format&gt;syslog&lt;/log_format&gt;
+    &lt;location&gt;C:\xampp\apache\logs\access.log&lt;/location&gt;
+&lt;/localfile&gt;
+&lt;localfile&gt;
+    &lt;log_format&gt;syslog&lt;/log_format&gt;
+    &lt;location&gt;C:\xampp\apache\logs\error.log&lt;/location&gt;
+&lt;/localfile&gt;</code></pre>
+                        Save the file and restart the Wazuh agent service via the Services app or by running <code>net stop wazuh</code> and <code>net start wazuh</code> in an elevated Command Prompt.</li>
+                    <li><strong>Simulate Activity in DVWA</strong>: Back in DVWA, perform some actions like attempting an SQL Injection (e.g., entering <code>' OR '1'='1</code> in a login field) or navigating through different pages.<img src = /media/wazuh-threat-detection-with-dvwa/SQLi.png> These actions will generate entries in Apache’s access and error logs.</li>
+                </ol>
+
+                <h2 id="reading-logs">3️⃣ Reading DVWA Logs in Wazuh</h2>
+                <p>Now that the Wazuh agent is sending Apache logs to the Wazuh manager, let’s view them in the Wazuh dashboard.</p>
+                <ol>
+                    <li><strong>Access the Wazuh Dashboard</strong>: Open a browser and navigate to your Wazuh manager’s dashboard (e.g., <code>https://192.168.1.100:5601</code> if using the default Kibana port). Log in with the default credentials (usually <code>admin</code> and a password set during setup).</li>
+                    <li><strong>View the Logs</strong>: In the Wazuh dashboard, go to the “Security Events” or “Discover” tab. Filter the logs by selecting the index pattern (e.g., <code>wazuh-alerts-*</code>). You can search for logs from your Windows machine by filtering with the agent’s name or IP. Look for entries related to <code>access.log</code> or <code>error.log</code>. For example, you might see HTTP requests to <code>/dvwa/</code> paths, including any malicious inputs you tried.</li>
+                    <li><strong>Analyze the Logs</strong>: Wazuh will parse the logs and may generate alerts if it detects suspicious activity (e.g., repeated failed login attempts). Use the dashboard to analyze trends, such as the frequency of requests or errors related to specific DVWA vulnerabilities.<img src = /media/wazuh-threat-detection-with-dvwa/SQLi-detect.png></li>
+                </ol>
+
+                <h2 id="conclusion">Conclusion ✅ </h2><img src = /media/wazuh-threat-detection-with-dvwa/hackerman.jpg>
+                <p>By following this guide, you’ve set up DVWA using XAMPP to practice web security and configured Wazuh to monitor its logs. This setup allows you to experiment with vulnerabilities in a safe environment while learning how to use a SIEM tool like Wazuh to detect and analyze potential attacks. For more resources, check out the <a href="https://owasp.org">OWASP website</a> for web security best practices and the <a href="https://documentation.wazuh.com">Wazuh documentation</a> for advanced log analysis techniques.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Aboodi's Blog. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All blog posts on Aboodi's Blog - Cybersecurity tutorials and guides.">
+    <title>All Posts | Aboodi's Blog</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Jost', sans-serif;
+            line-height: 1.6;
+            color: #d9d1db; /* Light gray text for dark backgrounds */
+            background-color: #282b4f; /* Dark background */
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        /* Header styles */
+        header {
+            background: #1f2937; /* Darker header background */
+            color: #f6f3f6; /* Light text */
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #33b8ff; /* Accent color for logo */
+            text-decoration: none;
+            transition: color 0.4s;
+        }
+        nav .logo:hover {
+            color: #4240d4; /* Accent color on hover */
+        }
+        nav ul {
+            font-size: 1.2rem;
+            list-style: none;
+            display: flex;
+            font-weight: normal;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            color: #33b8ff; /* Light link color */
+            text-decoration: none;
+            transition: color 0.4s;
+        }
+        nav ul li a:hover {
+            color: #ffffff; /* Accent color on hover */
+        }
+
+        /* Posts page styles */
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff; /* White for headings */
+            font-weight: 700;
+            text-align: center;
+        }
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .post-preview {
+            background: #1f2937; /* Dark background for post previews */
+            padding: 1.5rem;
+            border: 1px solid #374151; /* Subtle border */
+            border-radius: 5px;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .post-preview img {
+            width: 110px;
+            height: 100px;
+            object-fit: cover; /* Ensure image maintains aspect ratio */
+            border-radius: 5px;
+        }
+        .post-preview-content {
+            flex: 1;
+        }
+        .post-preview h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .post-preview p {
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .post-preview a {
+            color: #33b8ff; /* Accent color for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .post-preview a:hover {
+            color: #ffffff; /* Hover color */
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #1f2937; /* Dark footer background */
+            color: #d1d5db; /* Light gray text */
+            margin-top: 2rem;
+        }
+
+        /* Font definitions with absolute path */
+        @font-face {
+            font-family: 'Jost';
+            src: url('/fonts/Jost-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Jost';
+            src: url('/fonts/Jost-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ABOODI.SITE</a>
+            <ul>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/posts.html">Posts</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>All Blog Posts</h1>
+            <div class="posts-list">
+                <!-- Post 1 -->
+                <div class="post-preview">
+                    <img src="/media/mypic.png" alt="DVWA Login Page">
+                    <div class="post-preview-content">
+                        <a href="/posts/wazuh-threat-detection-with-dvwa.html"> <h2>Installing DVWA with XAMPP and Reading Logs with Wazuh</h2></a>
+                        <p>In this post, I’ll guide you through installing the Damn Vulnerable Web Application (DVWA) using XAMPP on Windows...</p>
+                        <a href="/posts/wazuh-threat-detection-with-dvwa.html">Read More</a>
+                    </div>
+                </div>
+                <!-- Add more posts here as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Aboodi's Blog. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

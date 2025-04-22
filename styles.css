@@ -41,7 +41,7 @@ nav .logo {
 
 .logo:hover {
     /*color: #f9c74f; /* Accent color on hover */
-    color: #ba1a1a;
+    color: #4240d4;
 }
 
 nav ul {
@@ -62,7 +62,7 @@ nav ul li a {
 }
 nav ul li a:hover {
     /*color: #f9c74f; /* Accent color on hover */
-    color: #ba1a1a;
+    color: #4240d4;
 }
 /* Hero Section */
 #hero {
@@ -107,9 +107,11 @@ h2 {
     transition: color 0.2s;
     font-weight: bold;
 }
+
+
 .post a:hover {
     text-decoration: none;
-    color: #2285d5;
+    color: #4240d4;
 }
 
 /* Footer styles */
@@ -148,3 +150,4 @@ body {
 }
 
 /* <div class="logo">ABOODI.SITE</div> */
+
